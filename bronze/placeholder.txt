@@ -1,0 +1,1 @@
+The file contains bronze ingestion logic for the tables including customers, accounts, merchants and streaming transactions. 

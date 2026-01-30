@@ -63,8 +63,8 @@ Enables:
 
 🎯 Outcome
 This project demonstrates how to build a modern, governed, and production-ready data platform that:
-✔ Handles batch and streaming data
-✔ Applies data quality and transformation layers
-✔ Implements CDC & dimensional modeling
-✔ Produces fraud analytics datasets
-✔ Uses CI/CD for automated cloud deployment
+- Handles batch and streaming data
+- Applies data quality and transformation layers
+- Implements CDC & dimensional modeling
+- Produces fraud analytics datasets
+- Uses CI/CD for automated cloud deployment

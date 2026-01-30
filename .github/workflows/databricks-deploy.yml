@@ -19,18 +19,14 @@ jobs:
           
       - name: Configure Databricks CLI
         run: |
-          mkdir -p ~/.databricks
-          cat <<EOF > ~/.databricks/config
-          [DEFAULT]
-          host = ${{ secrets.DATABRICKS_HOST }}
-          token = ${{ secrets.DATABRICKS_TOKEN }}
-          EOF
+          echo "DATABRICKS_HOST=${{ secrets.DATABRICKS_HOST }}" >> $GITHUB_ENV
+          echo "DATABRICKS_TOKEN=${{ secrets.DATABRICKS_TOKEN }}" >> $GITHUB_ENV
 
       - name: Deploy Bronze Notebooks
-        run: databricks workspace import_dir bronze /Shared/finance_fraud_project/bronze -o
+        run: databricks workspace import_dir bronze /Shared/finance_fraud_project/bronze --overwrite
 
       - name: Deploy Silver Notebooks
-        run: databricks workspace import_dir silver /Shared/finance_fraud_project/silver -o
+        run: databricks workspace import_dir silver /Shared/finance_fraud_project/silver --overwrite
 
       - name: Deploy Gold Notebooks
-        run: databricks workspace import_dir gold /Shared/finance_fraud_project/gold -o
+        run: databricks workspace import_dir gold /Shared/finance_fraud_project/gold --overwrite

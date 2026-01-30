@@ -16,7 +16,7 @@ jobs:
       - name: Install Databricks CLI
         run: |
           pip install databricks-cli
-
+          
       - name: Configure Databricks CLI
         run: |
           mkdir -p ~/.databricks

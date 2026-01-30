@@ -1,0 +1,1 @@
+This folder contains cleaned customers, accounts, merchants and transactions data coming from bronze layer of medallion architecture. 

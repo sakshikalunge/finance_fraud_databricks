@@ -20,9 +20,11 @@ jobs:
       - name: Configure Databricks CLI
         run: |
           mkdir -p ~/.databricks
-          echo "[DEFAULT]" > ~/.databricks/config
-          echo "host = ${{ secrets.DATABRICKS_HOST }}" >> ~/.databricks/config
-          echo "token = ${{ secrets.DATABRICKS_TOKEN }}" >> ~/.databricks/config
+          cat <<EOF > ~/.databricks/config
+          [DEFAULT]
+          host = ${{ secrets.DATABRICKS_HOST }}
+          token = ${{ secrets.DATABRICKS_TOKEN }}
+          EOF
 
       - name: Deploy Bronze Notebooks
         run: databricks workspace import_dir bronze /Shared/finance_fraud_project/bronze -o

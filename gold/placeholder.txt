@@ -1,0 +1,1 @@
+This folder contains high-level ready-to-use list of fraud transactions data for business decision making. 
